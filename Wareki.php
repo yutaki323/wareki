@@ -62,7 +62,7 @@ class Wareki
     {
         if ($date === null) {
             $timestamp = time();
-        } elseif (!($timestamp = strtotime($date)) === false) {
+        } elseif (($timestamp = strtotime($date)) === false) {
             return false;
         }
 
