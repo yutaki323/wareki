@@ -24,13 +24,19 @@ echo $wareki->format('{gengou.short}.{nendo}');
 ### 年度を漢数字にする
 
 ```
+$wareki = new Wareki('2019-04-30');
+echo $wareki->format('{gengou}{nendo.kanji}年');
+```
+> 平成三十一年
+
+```
 $wareki = new Wareki('2019-05-01');
-$wareki->format('{gengou}{nendo.kanji}年');
+echo $wareki->format('{gengou}{nendo.kanji}年');
 ```
 > 令和元年
 
 ```
 $wareki = new Wareki('2019-05-01');
-$wareki->format('{gengou}の{nendo.kansuji}年');
+echo $wareki->format('{gengou}の{nendo.kansuji}年');
 ```
 > 令和の一年
