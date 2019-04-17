@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Date To Wareki
  *
@@ -36,12 +35,8 @@ class Wareki
         $this->setDate($date);
     }
 
-    public function setDate($date)
+    public function setTimestamp($timestamp)
     {
-        if ($date === null || ($timestamp = strtotime($date)) === false) {
-            $timestamp = time();
-        }
-
         $this->timestamp = $timestamp;
 
         foreach ($this->gengo_list as $gengo) {
@@ -54,9 +49,27 @@ class Wareki
         if ($this->gengo) {
             $this->nendo = intval((date('Y', $timestamp) - date('Y', $gengo['timestamp'])) + 1);
         }
+
+        return !!$this->gengo;
     }
 
-    public function format($format)
+    public function getTimestamp()
+    {
+        return $this->timestamp;
+    }
+
+    public function setDate($date = null)
+    {
+        if ($date === null) {
+            $timestamp = time();
+        } elseif (!($timestamp = strtotime($date)) === false) {
+            return false;
+        }
+
+        return $this->setTimestamp($timestamp);
+    }
+
+    public function format($format = '{gengou}{nendo}年')
     {
         if (!$this->gengo) {
             return false;
