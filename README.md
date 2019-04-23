@@ -8,12 +8,19 @@
 アルファベット表記、漢数字にも対応しています。
 (年度は9999年が上限です)
 
+## install
+
+```
+composer require yutaki323/wareki
+```
 
 ## usage
 
 ### 基本
 
 ```
+use Wareki\Wareki;
+
 $wareki = new Wareki;
 echo $wareki->format();
 ```
