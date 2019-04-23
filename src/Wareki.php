@@ -1,4 +1,6 @@
 <?php
+namespace Wareki;
+
 /**
  * Date To Wareki
  *
