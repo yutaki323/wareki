@@ -1,0 +1,20 @@
+{
+    "name": "yutaki323/wareki",
+    "description": "日付文字列を元号＋和暦数字の表記に変換するPHPのクラスです。",
+    "type": "library", 
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yutaki",
+            "homepage": "https://github.com/yutaki323"
+        }
+    ],
+    "require": {
+        "php": ">=5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wareki\\": "src"
+        }
+    }
+}
